@@ -18,4 +18,10 @@ class MainController extends Controller
         $pilot = Pilot::findOrFail($id);
         return view('pages.show',compact('pilot'));
     }
+
+    public function form()
+    {
+        $brands = Brand::all();
+        return view('pages.form',compact('brands'));
+    }
 }
