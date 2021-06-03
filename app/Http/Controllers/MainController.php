@@ -24,4 +24,17 @@ class MainController extends Controller
         $brands = Brand::all();
         return view('pages.form',compact('brands'));
     }
+    public function addCar(Request $request)
+    {
+        $validateData = $request -> validate([
+            'name' => 'required|max:64',
+            'model' => 'required|max:48',
+            'kw' => 'required',
+        ]);
+        $brand = Brand::findOrFail($request->get('brand_id'));
+        $car = Car::make($validateData);
+        $car ->brand()->associate($brand);
+        $car ->save();
+        return redirect() -> route('home');
+    }
 }

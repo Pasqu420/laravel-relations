@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('content')
-    <form action="#" method="post">
+    <form action="{{Route('addCar')}}" method="post">
 
         @csrf
         @method('post')
@@ -21,10 +21,10 @@
         </div>
 
         <div>
-            <label for="brand">BRAND</label>
-            <select name="brand" id="brand">
+            <label for="brand_id">BRAND</label>
+            <select name="brand_id" id="brand_id">
                 @foreach ($brands as $brand)
-                    <option value="{{$brand->name}}">{{$brand->name}}</option>
+                    <option value="{{$brand->id}}">{{$brand->name}}</option>
                 @endforeach
             </select>    
         </div>

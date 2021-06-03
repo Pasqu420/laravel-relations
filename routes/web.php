@@ -9,3 +9,5 @@ Route::get('pilot/{id}','MainController@show')
 
 Route::get('form','MainController@form')
     ->name('form');
+Route::post('add','MainController@addCar')
+    ->name('addCar');
