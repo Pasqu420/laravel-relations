@@ -31,10 +31,9 @@ class MainController extends Controller
             'model' => 'required|max:48',
             'kw' => 'required',
         ]);
-        $brand = Brand::findOrFail($request->get('brand_id'));
+        $brand = Brand::findOrFail($request -> get('brand_id'));
         $car = Car::make($validateData);
-        $car ->brand()->associate($brand);
-        $car ->save();
+        $car ->brand() -> associate($brand) -> save();
         return redirect() -> route('home');
     }
 }
