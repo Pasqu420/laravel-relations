@@ -11,7 +11,6 @@ class Pilot extends Model
         'lastname',
         'date_of_birth',
         'nationality',
-        'car_id'
     ];
     public function cars()
     {
