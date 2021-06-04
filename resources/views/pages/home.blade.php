@@ -2,7 +2,7 @@
 @section('content')
     <h2>Cars : </h2>
     @foreach ($cars as $car)
-        <div style="margin: 50px 0px">
+        <div class="car">
             <h3>
                 NAME : {{$car->name}}
             </h3>
@@ -20,7 +20,7 @@
                 </strong>
                 ({{$car->brand->name}})
             </p>
-            <div>
+            <div class="pilots">
                 @foreach ($car->pilots as $pilot)
                     <h3>
                         <a href="{{Route('show',$pilot->id)}}">

@@ -1,0 +1,31 @@
+header,
+footer {
+  text-align: center;
+}
+
+div.car {
+  margin: 50px;
+}
+
+div.car div.pilots {
+  margin-left: 70px;
+}
+
+form {
+  width: 500px;
+  height: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form div {
+  margin: 20px 0;
+}
+
+form select {
+  width: 300px;
+}
+

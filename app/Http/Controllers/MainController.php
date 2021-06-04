@@ -22,7 +22,8 @@ class MainController extends Controller
     public function form()
     {
         $brands = Brand::all();
-        return view('pages.form',compact('brands'));
+        $pilots = Pilot::all();
+        return view('pages.form',compact('brands','pilots'));
     }
     public function addCar(Request $request)
     {
@@ -31,9 +32,15 @@ class MainController extends Controller
             'model' => 'required|max:48',
             'kw' => 'required',
         ]);
+        
         $brand = Brand::findOrFail($request -> get('brand_id'));
         $car = Car::make($validateData);
         $car ->brand() -> associate($brand) -> save();
+
+        $car ->pilots()
+             -> attach($request -> get('pilot_id')); 
+        $car-> save();
+
         return redirect() -> route('home');
     }
 }

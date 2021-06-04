@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('content')
     <h2>
-        Cars : 
+        Car : 
     </h2>
     <div>
         <h3>
